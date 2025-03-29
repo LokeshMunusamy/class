@@ -126,7 +126,29 @@ class fixed{
     }
 }
 
-console.log(fixed.areaOfCircle(7));
+console.log(fixed.areaOfCircle(3));
 
 
 //abstraction 
+
+
+class EmailAndPassword{
+    constructor(email,password){
+        this.password = this.#encriptPass(password);
+        this.email = email;
+    }
+
+    #encriptPass(password){
+        return btoa(password);
+    }
+
+    show(){
+        console.log(`userMail: ${this.email}, password: ${this.password}`);
+    }
+
+    
+}
+
+let login = new EmailAndPassword('lokesh@gmail.com',123456);
+login.show();
+
